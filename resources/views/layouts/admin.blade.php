@@ -13,52 +13,58 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            
+
             <a class="navbar-brand ps-3" href="/productos">Productos</a>
-            
+
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            
+
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                           <div class="sb-sidenav-menu-heading">Gestión</div>
-                        <a class="nav-link" href="{{ route('productos.index') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-boxes-stacked"></i></div>
-                            Productos
-                        </a>
-                        <a class="nav-link" href="{{ route('productos.create') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
-                            Nuevo Producto
-                        </a>
+                            <div class="sb-sidenav-menu-heading">Gestión</div>
+                            <a class="nav-link" href="{{ route('productos.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-boxes-stacked"></i></div>
+                                Productos
+                            </a>
+                            <a class="nav-link" href="{{ route('productos.create') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
+                                Nuevo Producto
+                            </a>
+
+                            <div class="sb-sidenav-menu-heading">Personal</div>
+                            <a class="nav-link" href="{{ route('empleados.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Recursos Humanos
+                            </a>
+                        </div>
                     </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Conectado como:</div>
+                        Administrador
                     </div>
-                  <div class="sb-sidenav-footer">
-                    <div class="small">Conectado como:</div>
-                    Administrador
-                </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4 mt-4">
-                    @if (session('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('success') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif
-                    @yield('contenido')
-                </div>
+                        @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+                        @yield('contenido')
+                    </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
-                   <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small text-muted">
-                        <div>&copy; 2026 Ferretería La prueba - Sistema de Control de Inventario</div>
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small text-muted">
+                            <div>&copy; 2026 Ferretería La prueba - Sistema de Control de Inventario</div>
+                        </div>
                     </div>
-                </div>
                 </footer>
             </div>
         </div>
